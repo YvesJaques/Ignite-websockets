@@ -30,6 +30,10 @@ function onLoad() {
     }
   });
 
+  socket.on("chat_iniciado", (data) => {
+    console.log(data)
+  })
+
   socket.emit("get_users", (users) => {
     users.map((user) => {
       if (user.email !== email) {
