@@ -10,7 +10,7 @@ interface CreateUserDTO {
 }
 
 @injectable()
-class CreateUserUseService {
+class CreateUserService {
   async execute({
     email, socket_id, avatar, name,
   }: CreateUserDTO): Promise<User> {
@@ -39,4 +39,4 @@ class CreateUserUseService {
   }
 }
 
-export { CreateUserUseService };
+export { CreateUserService };
