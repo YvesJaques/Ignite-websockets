@@ -59,10 +59,10 @@ io.on('connect', (socket) => {
 
     const createMessageService = container.resolve(CreateMessageService);
 
-    const user = getUserBySocketIdService.execute(socket.id);
+    const user = await getUserBySocketIdService.execute(socket.id);
 
     const message = await createMessageService.execute({
-      to: (await user)._id,
+      to: user._id,
       text: data.message,
       roomId: data.idChatRoom,
     });
